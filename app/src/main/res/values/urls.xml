@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="BASE_LOOKUP_URL">api.themoviedb.org</string>
+    <string name="BASE_PHOTO_URL">image.tmdb.org</string>
+</resources>

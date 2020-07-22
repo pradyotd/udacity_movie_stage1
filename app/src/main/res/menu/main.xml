@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:orderInCategory="1"
+        android:id="@+id/action_sort_by_pop"
+        android:title="@string/menu_sort_pop"
+        />
+    <item
+        android:orderInCategory="2"
+        android:id="@+id/action_sort_by_rate"
+        android:title="@string/menu_sort_top" />
+</menu>
