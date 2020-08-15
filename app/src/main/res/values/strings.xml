@@ -2,6 +2,12 @@
     <string name="app_name">Popular Movies</string>
     <string name="menu_sort_pop">Sort by Popularity</string>
     <string name="menu_sort_top">Sort by Top Rated</string>
+    <string name="menu_sort_favorite">Sort by Favorite</string>
     <string name="release_date">Release Date</string>
     <string name="vote_avg">User Rating</string>
+    <string name="movie_poster">Movie Poster</string>
+    <string name="favorite_title">Favorite</string>
+    <string name="trailers_title">Trailers</string>
+    <string name="trailer_caption">Trailer</string>
+    <string name="no_data_caption">No Data Found</string>
 </resources>

@@ -21,19 +21,15 @@ import androidx.recyclerview.widget.RecyclerView;
 public class MovieMenuAdapter extends RecyclerView.Adapter<MovieMenuAdapter.MovieMenuAdapterViewHolder> {
     private final static String TAG = MovieMenuAdapter.class.getName();
     private List<MovieData>  mMovieData;
-    private final URLManager mUrlManager;
-    private final String mPhotoSize;
     private final MovieMenuAdapterOnClickHandler mOnClickHandler;
     private final int mItemHeight;
     private final int mItemWidth;
 
     interface MovieMenuAdapterOnClickHandler {
-        void onClickHandler(MovieData movieData);
+        void onClickHandler(int movieId);
     }
 
-    public MovieMenuAdapter(URLManager urlManager, String photoSize, MovieMenuAdapterOnClickHandler clickHandler) {
-        mUrlManager = urlManager;
-        mPhotoSize = photoSize;
+    public MovieMenuAdapter(MovieMenuAdapterOnClickHandler clickHandler) {
         mOnClickHandler = clickHandler;
         mItemHeight =  Resources.getSystem().getDisplayMetrics().heightPixels/2;
         mItemWidth = Resources.getSystem().getDisplayMetrics().widthPixels/2;
@@ -60,15 +56,10 @@ public class MovieMenuAdapter extends RecyclerView.Adapter<MovieMenuAdapter.Movi
 
     @Override
     public void onBindViewHolder(@NonNull MovieMenuAdapterViewHolder holder, int position) {
-
        holder.mMovieDataItem  = mMovieData.get(position);
        Log.v(TAG, "Binding Movie:" + holder.mMovieDataItem.getTitle() );
-       String posterPath = holder.mMovieDataItem.getPoster_path().substring(1);
-       Log.v(TAG, "Poster Path " + posterPath );
-       Uri photoURI = mUrlManager.getPhotoURI(mPhotoSize, posterPath);
-       holder.mMovieDataItem.setPosterUri(photoURI);
-
-       Log.v(TAG, "Poster Uri " + photoURI.toString() );
+       Uri photoURI = holder.mMovieDataItem.getPosterUri();
+       Log.v(TAG, "onBindViewHolder Poster Uri " + photoURI.toString() );
        Picasso.get().load(photoURI).into(holder.mImageView);
     }
 
@@ -87,7 +78,7 @@ public class MovieMenuAdapter extends RecyclerView.Adapter<MovieMenuAdapter.Movi
         @Override
         public void onClick(View view) {
             int adapterPosition = getAdapterPosition();
-            mOnClickHandler.onClickHandler(mMovieData.get(adapterPosition));
+            mOnClickHandler.onClickHandler(mMovieData.get(adapterPosition).getId());
         }
 
         public MovieMenuAdapterViewHolder(@NonNull View itemView) {
@@ -96,5 +87,4 @@ public class MovieMenuAdapter extends RecyclerView.Adapter<MovieMenuAdapter.Movi
             itemView.setOnClickListener(this);
         }
     }
-
 }

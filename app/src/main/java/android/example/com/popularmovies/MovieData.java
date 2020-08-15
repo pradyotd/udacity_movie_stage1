@@ -14,13 +14,33 @@ public class MovieData {
     private String vote_average;
     private String overview;
     private Uri posterUri;
+    private int id;
 
-    public MovieData(String title, String release_date, String poster_path, String vote_average, String overview) {
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public MovieData(String title, String release_date, String poster_path, String vote_average, String overview, Uri posterUri, int id) {
         this.title = title;
         this.release_date = release_date;
         this.poster_path = poster_path;
         this.vote_average = vote_average;
         this.overview = overview;
+        this.posterUri = posterUri;
+        this.id = id;
+    }
+
+    public MovieData(MovieDetails details) {
+        this.title = details.getTitle();
+        this.release_date = details.getReleaseDate();
+        this.vote_average = details.getVoteAverage();
+        this.overview = details.getOverview();
+        this.posterUri = Uri.parse(details.getPosterUri());
+        this.id = details.getMovieId();
     }
 
     public String getTitle() {

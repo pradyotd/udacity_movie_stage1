@@ -10,4 +10,8 @@
         android:orderInCategory="2"
         android:id="@+id/action_sort_by_rate"
         android:title="@string/menu_sort_top" />
+    <item
+        android:orderInCategory="3"
+        android:id="@+id/action_sort_by_favorite"
+        android:title="@string/menu_sort_favorite" />
 </menu>

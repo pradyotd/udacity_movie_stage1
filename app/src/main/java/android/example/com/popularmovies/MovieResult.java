@@ -1,6 +1,6 @@
 package android.example.com.popularmovies;
 
-public class Response {
+public class MovieResult {
     private int page;
     private int total_results;
     private int total_pages;

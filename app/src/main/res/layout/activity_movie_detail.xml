@@ -61,6 +61,28 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
+            <CheckBox
+                android:id="@+id/btn_favorite"
+                android:background="@android:color/transparent"
+                android:button="@android:drawable/btn_star"
+                android:text="@string/favorite_title"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/trailers_title"
+                android:padding="5dp"
+                android:gravity="left"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTrailers"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
         </LinearLayout>
 
 
@@ -71,5 +93,22 @@
         android:layout_width="match_parent"
         android:padding="5dp"
         android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_title_review"
+        android:layout_width="match_parent"
+        android:padding="5dp"
+        android:textSize="24sp"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_reviews"
+            android:layout_width="match_parent"
+            android:padding="5dp"
+            android:layout_height="wrap_content" />
+    </ScrollView>
 
 </LinearLayout>

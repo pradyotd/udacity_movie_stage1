@@ -1,2 +1,4 @@
 Specify the Api Key required for accessing MOVIE DB in resource file api_keys.xml MOVIEDB_API_KEY.
-Obtain API KEY
+Obtain API KEY.
+If no favorites exist yet, You will see a No Data , caption(Should you select Favorites from the menu).
+Use the back button for navigation.
